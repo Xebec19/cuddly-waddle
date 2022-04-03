@@ -13,13 +13,13 @@ function App() {
   };
 
   return (
-    <Fragment>
-      {cartIsShown && <Cart onClass={hideCartHandler} />}
+    <CartProvider>
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
       <main>
         <Meals />
       </main>
-    </Fragment>
+    </CartProvider>
   );
 }
 
